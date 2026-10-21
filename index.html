@@ -8,37 +8,48 @@
         * {
             box-sizing: border-box;
             touch-action: manipulation;
+            user-select: none;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #0f172a;
             color: #f8fafc;
             margin: 0;
-            padding: 20px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
         }
         .container {
             width: 100%;
             max-width: 400px;
             background: #1e293b;
-            padding: 24px;
+            padding: 20px;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             text-align: center;
+            margin-top: 10px;
         }
         h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 22px;
+            margin-bottom: 10px;
             color: #38bdf8;
+        }
+        .balance-box {
+            font-size: 18px;
+            background: #0f172a;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #334155;
+            color: #34d399;
+            font-weight: bold;
         }
         button {
             width: 100%;
             padding: 14px;
-            margin-top: 12px;
+            margin-top: 10px;
             background-color: #0ea5e9;
             color: white;
             border: none;
@@ -51,6 +62,12 @@
         button:active {
             background-color: #0284c7;
         }
+        .secondary-btn {
+            background-color: #334155;
+        }
+        .secondary-btn:active {
+            background-color: #475569;
+        }
         input {
             width: 100%;
             padding: 12px;
@@ -59,62 +76,4 @@
             border: 1px solid #334155;
             border-radius: 8px;
             color: white;
-            font-size: 16px;
-            text-align: center;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container" id="app">
-        <h1>Nomerok App</h1>
-        <p>Добро пожаловать! Приложение успешно запущено.</p>
-        <button id="mainBtn">Крутить номер</button>
-        <button id="adminBtn" style="background-color: #334155; margin-top: 20px;">Админ-панель</button>
-    </div>
-
-    <div class="container hidden" id="adminPanel">
-        <h1>Панель админа</h1>
-        <input type="password" id="passInput" placeholder="Введите пароль">
-        <button id="loginBtn">Войти</button>
-        <button id="backBtn" style="background-color: #334155;">Назад</button>
-    </div>
-
-    <script>
-        const ADMIN_PASS = "1234"; // Пароль по умолчанию
-
-        const app = document.getElementById('app');
-        const adminPanel = document.getElementById('adminPanel');
-        const mainBtn = document.getElementById('mainBtn');
-        const adminBtn = document.getElementById('adminBtn');
-        const backBtn = document.getElementById('backBtn');
-        const loginBtn = document.getElementById('loginBtn');
-        const passInput = document.getElementById('passInput');
-
-        mainBtn.addEventListener('click', () => {
-            alert('Кнопка нажата! Логика работает.');
-        });
-
-        adminBtn.addEventListener('click', () => {
-            app.classList.add('hidden');
-            adminPanel.classList.remove('hidden');
-        });
-
-        backBtn.addEventListener('click', () => {
-            adminPanel.classList.add('hidden');
-            app.classList.remove('hidden');
-        });
-
-        loginBtn.addEventListener('click', () => {
-            if (passInput.value === ADMIN_PASS) {
-                alert('Успешный вход в админку!');
-            } else {
-                alert('Неверный пароль');
-            }
-        });
-    </script>
-</body>
-</html>
+            font-size:
